@@ -1,0 +1,110 @@
+[
+    {
+        "stateId": "st1",
+        "cityName": "Patna"
+    },
+    {
+        "stateId": "st1",
+        "cityName": "Gaya"
+    },
+    {
+        "stateId": "st1",
+        "cityName": "Gopalganj"
+    },
+    {
+        "stateId": "st2",
+        "cityName": "Kanpur"
+    },
+    {
+        "stateId": "st2",
+        "cityName": "Lucknow"
+    },
+    {
+        "stateId": "st2",
+        "cityName": "WalGhaziabades"
+    },
+    {
+        "stateId": "st3",
+        "cityName": "Jaipur"
+    },
+    {
+        "stateId": "st3",
+        "cityName": "Jodhpur"
+    },
+    {
+        "stateId": "st3",
+        "cityName": "Kota"
+    },
+    {
+        "stateId": "st4",
+        "cityName": "Manchester"
+    },
+    {
+        "stateId": "st4",
+        "cityName": "Milton Keynes"
+    },
+    {
+        "stateId": "st4",
+        "cityName": "Newcastle upon Tyne"
+    },
+    {
+        "stateId": "st5",
+        "cityName": "Edinburgh"
+    },
+    {
+        "stateId": "st5",
+        "cityName": "Glasgow"
+    },
+    {
+        "stateId": "st5",
+        "cityName": "Dundee"
+    },
+    {
+        "stateId": "st6",
+        "cityName": "Swansea"
+    },
+    {
+        "stateId": "st6",
+        "cityName": "Newport"
+    },
+    {
+        "stateId": "st6",
+        "cityName": "Wrexham"
+    },
+    {
+        "stateId": "st7",
+        "cityName": "Anchorage"
+    },
+    {
+        "stateId": "st7",
+        "cityName": "Juneau"
+    },
+    {
+        "stateId": "st7",
+        "cityName": "Fairbanks"
+    },
+    {
+        "stateId": "st8",
+        "cityName": "Phoenix"
+    },
+    {
+        "stateId": "st8",
+        "cityName": "Tucson"
+    },
+    {
+        "stateId": "st8",
+        "cityName": "Mesa"
+    },
+    {
+        "stateId": "st9",
+        "cityName": "Little Rock"
+    },
+    {
+        "stateId": "st9",
+        "cityName": "Fayetteville"
+    },
+    {
+        "stateId": "st9",
+        "cityName": "Springdale"
+    }
+]

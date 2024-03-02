@@ -1,0 +1,47 @@
+[
+    {
+        "stateId": "st1",
+        "stateName": "Bihar",
+        "countryId": 1
+    },
+    {
+        "stateId": "st2",
+        "stateName": "Utter Perdesh",
+        "countryId": 1
+    },
+    {
+        "stateId": "st3",
+        "stateName": "Rajasthan",
+        "countryId": 1
+    },
+    {
+        "stateId": "st4",
+        "stateName": "England",
+        "countryId": 2
+    },
+    {
+        "stateId": "st5",
+        "stateName": "Scotland",
+        "countryId": 2
+    },
+    {
+        "stateId": "st6",
+        "stateName": "Wales",
+        "countryId": 2
+    },
+    {
+        "stateId": "st7",
+        "stateName": "Alaska",
+        "countryId": 3
+    },
+    {
+        "stateId": "st8",
+        "stateName": "Arizona",
+        "countryId": 3
+    },
+    {
+        "stateId": "st9",
+        "stateName": "Arkansas",
+        "countryId": 3
+    }
+]

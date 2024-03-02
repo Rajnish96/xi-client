@@ -19,34 +19,28 @@ export default function Dashboard(props) {
                         <div className='col-6'>{responseData.email}</div>
                     </div>
                     <div className='row'>
-                        <div className='col-6'>Country</div>
-                        <div className='col-6'>{responseData.country}</div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-6'>State</div>
-                        <div className='col-6'>{responseData.state}</div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-6'>City</div>
-                        <div className='col-6'>{responseData.city}</div>
-                    </div>
-                    <div className='row'>
-                        <div className='col-6'>Gender</div>
-                        <div className='col-6'>{responseData.gender}</div>
-                    </div>
-                    <div className='row'>
                         <div className='col-6'>Date of Birth</div>
                         <div className='col-6'>{responseData.date_of_birth}</div>
                     </div>
                     <div className='row'>
-                        <div className='col-6'>Aga</div>
-                        <div className='col-6'>{responseData.age}</div>
+                        <div className='col-6'>Residential Address Street 1</div>
+                        <div className='col-6'>{responseData.r_street_1}</div>
                     </div>
-
+                    <div className='row'>
+                        <div className='col-6'>Residential Address Street 2</div>
+                        <div className='col-6'>{responseData.r_street_2}</div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-6'>Permanent Address Street 1</div>
+                        <div className='col-6'>{responseData.per_street_1}</div>
+                    </div>
+                    <div className='row'>
+                        <div className='col-6'>Permanent Address Street 2</div>
+                        <div className='col-6'>{responseData.per_street_2}</div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </>
     )
 }

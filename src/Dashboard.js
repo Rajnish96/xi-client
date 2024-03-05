@@ -1,7 +1,8 @@
 import React from 'react'
 
 export default function Dashboard(props) {
-    const { responseData } = props
+    const { responseData, documentsResultData } = props
+    console.log('documentsResultData', documentsResultData);
     return (<>
         <div className='container'>
             <div className='row justify-content-center'>
@@ -40,6 +41,24 @@ export default function Dashboard(props) {
                     </div>
                 </div>
             </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th scope="col">File Name</th>
+                        <th scope="col">File Type</th>
+                        <th scope="col">Document</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {documentsResultData?.map((data, id) => (
+                        <tr key={id}>
+                            <td>{data?.file_name}</td>
+                            <td>{data?.file_type}</td>
+                            <td><img src={'C:\Users\R.K Singh\Desktop\RAJNISH'} alt={(data?.document)?.split('\\')?.pop()} width="50" height="50" /></td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     </>
     )

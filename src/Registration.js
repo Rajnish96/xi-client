@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { BASE_URL, REGISTER_USER } from './constant/Endpoints';
 
 export default function Registration(props) {
-    const { responseData } = props
+    const { responseData, documentsResultData } = props
     const [data, setData] = useState([])
     const [formData, setFormData] = useState({
         first_name: "",
@@ -35,7 +35,7 @@ export default function Registration(props) {
     const handleSubmit = useCallback((e) => {
         try {
             e.preventDefault()
-            const input = {
+            const input = [{
                 "first_name": formData.first_name,
                 "last_name": formData.last_name,
                 "email": formData.email,
@@ -44,13 +44,14 @@ export default function Registration(props) {
                 "r_street_2": formData.r_street_2,
                 "per_street_1": formData.same_as_r ? formData.r_street_1 : formData.per_street_1,
                 "per_street_2": formData.same_as_r ? formData.r_street_2 : formData.per_street_2,
-            }
-            if (isAtLeast18YearsOld(input?.date_of_birth)) {
+            }, data]
+            if (isAtLeast18YearsOld(input[0]?.date_of_birth)) {
                 if (data?.length > 1) {
-
                     axios.post(`${BASE_URL}${REGISTER_USER}`, input)
                         .then((res) => {
-                            responseData(res?.data?.result)
+                            console.log('res', res);
+                            responseData(res?.data?.result);
+                            documentsResultData(res?.data?.documentsData?.documents);
                             toast.success(res?.data?.message);
                         })
                         .catch((e) => { toast.error(e?.response?.data?.message || e?.response?.statusText || "error occurred"); console.log("Error-post API:", e); });
@@ -66,7 +67,7 @@ export default function Registration(props) {
     const addNewHandle = () => {
         if (formData?.file_name !== "" && formData?.file_type !== "" && formData?.document !== "") {
             if (formData?.file_type?.split('/')?.includes(formData?.document?.split(".")[1])) {
-                setData([...data, { id: data?.length, file_name: formData?.file_name, file_type: formData?.file_type, document: formData?.document }])
+                setData([...data, { dataId: data?.length + 1, email: formData.email, file_name: formData?.file_name, file_type: (formData?.document).split(".").pop(), document: formData?.document }])
                 setFormData({ ...formData, file_name: "", file_type: "", document: "" })
             } else toast.error('Upload correct Document type')
         } else toast.error("fill all Data")
@@ -75,6 +76,7 @@ export default function Registration(props) {
         const updatedData = data.filter((row) => row.id !== i);
         setData(updatedData);
     }
+    console.log('data', data);
     return (<>
         <div className='container'>
             <div className='row justify-content-center'>
@@ -183,7 +185,7 @@ export default function Registration(props) {
                         </div>
                     </div>
                     {data?.map(item => (
-                        <div key={item.id} className='row'>
+                        <div key={item.dataId} className='row'>
                             <div className="form-group col">
                                 <label>File Name<span className="text-danger">*</span></label>
                                 <input disabled className="form-control" value={item?.file_name} />
@@ -194,10 +196,10 @@ export default function Registration(props) {
                             </div>
                             <div className="form-group col">
                                 <label>Upload Document<span className="text-danger">*</span></label>
-                                <input disabled className="form-control" value={item?.document.split('\\').pop()} />
+                                <input disabled className="form-control" value={item?.document?.split('\\')?.pop()} />
                             </div>
                             <div className='col d-flex align-items-end'>
-                                <button type="button" className="btn border" onClick={() => deleteHandle(item.id)}>
+                                <button type="button" className="btn border" onClick={() => deleteHandle(item.dataId)}>
                                     <i className="bi bi-trash3"></i>
                                 </button>
                             </div>
